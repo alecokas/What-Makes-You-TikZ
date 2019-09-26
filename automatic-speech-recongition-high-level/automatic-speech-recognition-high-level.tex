@@ -1,0 +1,28 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage{tikz}
+
+\tikzstyle{invisNode}=[circle, line width=0mm, inner sep=0pt]
+\tikzstyle{clearSquareNode}=[draw,minimum size=20pt,inner sep=1pt]
+\tikzstyle{stateTransition}=[-stealth, thick]
+
+\begin{document}
+
+
+\begin{tikzpicture}[Overview of an ASR system]
+    \node[invisNode, minimum size=20pt] (h0) at (-5.5, 0) {\parbox{1.2cm}{\centering Audio \\ Input}};
+    \node[clearSquareNode, minimum height=35pt] (h1) at (-3, 0) {\parbox{2cm}{\centering Front-end \\ Features}};
+    \node[clearSquareNode, minimum height=35pt, minimum width=45pt] (h2) at (0, 0) {Decoder};
+    \node[clearSquareNode, minimum height=35pt, minimum width=45pt] (h3) at (0, 2) {Lexicon};
+    \node[clearSquareNode, minimum height=35pt] (h4) at (-2, -2) {\parbox{2cm}{\centering Acoustic \\ Model}};
+    \node[clearSquareNode, minimum height=35pt] (h5) at (2, -2) {\parbox{2cm}{\centering Language \\ Model}};
+    \node[invisNode, minimum size=50pt] (h6) at (3, 0) {Hypotheses};
+
+	\draw[stateTransition] (h0) to[out=0,in=180] node [midway, sloped, below] {} (h1);
+	\draw[stateTransition] (h1) to[out=0,in=180] node [midway, sloped, below] {} (h2);
+	\draw[stateTransition] (h3) to[out=270,in=90] node [midway, sloped, below] {} (h2);
+	\draw[stateTransition] (h4) to[out=45,in=-135] node [midway, sloped, below] {} (h2);
+	\draw[stateTransition] (h5) to[out=135,in=-45] node [midway, sloped, below] {} (h2);
+	\draw[stateTransition] (h2) to[out=0,in=180] node [midway, sloped, below] {} (h6);
+\end{tikzpicture}
+
+\end{document}
