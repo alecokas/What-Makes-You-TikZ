@@ -21,18 +21,18 @@
     \node[smallnode] (n6) at (-4, -1) {};
     
     % Arcs
-    \draw[stateTransition] (n6) to[out=15,in=195] node [midway, sloped, above] {quit} (n1);
-    \draw[stateTransition] (n6) to[out=55,in=150] node [midway, sloped, above] {quick} (n1);
-    \draw[stateTransition] (n6) to[out=-15,in=185] node [midway, sloped, above] {wick} (n2);
+    \draw[stateTransition] (n6) to[out=15,in=195] node [midway, sloped, above] {\Large{quit}} (n1);
+    \draw[stateTransition] (n6) to[out=55,in=150] node [midway, sloped, above] {\Large{quick}} (n1);
+    \draw[stateTransition] (n6) to[out=-15,in=185] node [midway, sloped, above] {\Large{wick}} (n2);
     
-    \draw[stateTransition] (n1) to[out=352,in=172] node [midway, sloped, above] {crown} (n4);
+    \draw[stateTransition] (n1) to[out=352,in=172] node [midway, sloped, above] {\Large{crown}} (n4);
     
-    \draw[stateTransition] (n3) to[out=-20,in=165] node [midway, sloped, above] {fox} (n5);
-    \draw[stateTransition] (n4) to[out=-5,in=205] node [midway, sloped, above] {ox} (n5);
-    \draw[stateTransition] (n3) to[out=10,in=120] node [midway, sloped, above] {fast} (n5);
+    \draw[stateTransition] (n3) to[out=-20,in=165] node [midway, sloped, above] {\Large{fox}} (n5);
+    \draw[stateTransition] (n4) to[out=-5,in=205] node [midway, sloped, above] {\Large{ox}} (n5);
+    \draw[stateTransition] (n3) to[out=10,in=120] node [midway, sloped, above] {\Large{fast}} (n5);
     
-    \draw[stateTransition] (n1) to[out=15,in=195] node [midway, sloped, above] {brown} (n3);
-    \draw[stateTransition] (n2) to[out=5,in=190] node [midway, sloped, below] {gown} (n4);
+    \draw[stateTransition] (n1) to[out=15,in=195] node [midway, sloped, above] {\Large{brown}} (n3);
+    \draw[stateTransition] (n2) to[out=5,in=190] node [midway, sloped, below] {\Large{gown}} (n4);
 
 \end{tikzpicture}
 
