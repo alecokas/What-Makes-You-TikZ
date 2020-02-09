@@ -1,0 +1,32 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,shapes, decorations.pathmorphing,backgrounds,positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{smallnode}=[draw, circle, inner sep=2pt]
+\tikzstyle{invisinode}=[circle]
+\tikzstyle{stateTransition}=[thick, ->, -{Latex[length=3mm,width=3mm]}, align=center]
+
+
+\begin{document}
+\begin{tikzpicture}
+    % nodes
+    \node[smallnode] (n1) at (-2, 0) [label=below:$t_0$]{};
+    \node[smallnode] (n2) at (0, 0) [label=below:$t_1$]{};
+    \node[smallnode] (n3) at (2, 0) [label=below:$t_2$]{};
+    \node[smallnode] (n4) at (4, 0) [label=below:$t_3$]{};
+    
+    % Arcs
+	\draw[stateTransition] (n1) to[out=0,in=180] node [midway, sloped, above] {quick} (n2);
+	\draw[stateTransition] (n2) to[out=0,in=180] node [midway, sloped, above] {brown} (n3);
+	\draw[stateTransition] (n3) to[out=0,in=180] node [midway, sloped, above] {fox} (n4);
+	
+    % Confidence
+    \node[invisinode] (c1) at (-1, 1.2) [label=below:$c_{0}{=}0.85$]{};
+    \node[invisinode] (c2) at (1, 1.2) [label=below:$c_{1}{=}0.1$]{};
+    \node[invisinode] (c3) at (3, 1.2) [label=below:$c_{2}{=}0.9$]{};
+\end{tikzpicture}
+
+\end{document}
