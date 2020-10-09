@@ -1,0 +1,40 @@
+
+
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{forest}
+\usetikzlibrary{shadows}
+\tikzset{every shadow/.style={shadow xshift=5pt,shadow yshift=-5pt}}
+\begin{document}
+% starting point: https://tex.stackexchange.com/a/341454/121799
+\begin{forest}
+  for tree={
+    font=\sffamily,
+    line width=1pt,
+    draw,
+    child anchor=north,
+    parent anchor=south,
+    grow=south,
+    align=center,
+    edge path={
+      \noexpand\path[line width=1pt, \forestoption{edge}]
+      (!u.parent anchor)  |- ([yshift=4pt].child anchor) -- (.child anchor) \forestoption{edge label};
+    },
+  },
+  s sep+=20pt,
+    [All Products,double=white 
+     [Vegetables]
+     [,phantom]
+     [Meat
+     [Beef]
+     [Chicken]
+     [Pork]
+     ]
+    ]
+  \begin{scope}[line width=1pt]
+   \foreach \X in {1,...,4}
+   {\draw (phantom\X.north) -- (phantom\X.south);}
+  \end{scope}
+\end{forest}
+\end{document}
+
+enter image description here
